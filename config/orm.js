@@ -16,10 +16,10 @@ var orm = {
       console.log(result);
     });
   },
-  updateOne: function (whatToSetItTo, whatToUpdate) {
+  updateOne: function (whatToUpdate) {
     // UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
-    var queryString = "UPDATE burgers SET devoured = ?? WHERE ??";
-    connection.query(queryString, [whatToSetItTo, whatToUpdate], function (
+    var queryString = "UPDATE burgers SET devoured = true WHERE ??";
+    connection.query(queryString, [whatToUpdate], function (
       err,
       result
     ) {
