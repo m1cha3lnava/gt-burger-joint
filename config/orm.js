@@ -7,10 +7,19 @@ var orm = {
       if (err) throw err;
       console.log(result);
     });
-  } /* 
-  insertOne: function (whatToSelect, tableInput) {
-    var queryString = "SELECT ?? FROM ??";
-    connection.query(queryString, [whatToSelect, tableInput], function (
+  },
+  insertOne: function (whatToInput) {
+    // INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); 
+    var queryString = "INSERT INTO burgers VALUES ??";
+    connection.query(queryString, [whatToInput], function (err, result) {
+      if (err) throw err;
+      console.log(result);
+    });
+  },
+  updateOne: function (whatToSetItTo, whatToUpdate) {
+    // UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+    var queryString = "UPDATE burgers SET devoured = ?? WHERE ??";
+    connection.query(queryString, [whatToSetItTo, whatToUpdate], function (
       err,
       result
     ) {
@@ -18,23 +27,6 @@ var orm = {
       console.log(result);
     });
   },
-  updateOne: function (whatToSelect, tableInput) {
-    var queryString = "SELECT ?? FROM ??";
-    connection.query(queryString, [whatToSelect, tableInput], function (
-      err,
-      result
-    ) {
-      if (err) throw err;
-      console.log(result);
-    });
-  }, */,
-  /* const function insertOne() {
-    //insert into db
-}
-
-const function updateOne() {
-    //update table where
-} */
 };
 
 // Export the orm object for the model
