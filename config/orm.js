@@ -11,7 +11,7 @@ var orm = {
   },
   insertOne: function (whatToInput,cb) {
     // INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...); 
-    var queryString = "INSERT INTO burgers VALUES ??";
+    var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
     connection.query(queryString, [whatToInput], function (err, result) {
       if (err) throw err;
       console.log(result);
