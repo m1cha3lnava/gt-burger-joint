@@ -2,7 +2,9 @@
 
 <ul>
 	{{#each burger}}
-	<li>{{this.id}} {{this.burger_name}}<button class="eaten">Devour?</button></li>
+	{{#unless devoured}}
+	<li>{{this.id}} {{this.burger_name}}<button id= {{this.id}} class="eaten">Devour?</button></li>
+	{{/unless}}
 	{{/each}}
 </ul>
 
@@ -16,3 +18,12 @@
 
 	<button type="submit">Add Burger</button>
 </form>
+
+
+<ul>
+	{{#each burger}}
+	{{#if devoured}}
+	<li>{{this.id}} {{this.burger_name}}<button id= {{this.id}} class="eaten">Devour?</button></li>
+	{{/if}}
+	{{/each}}
+</ul>

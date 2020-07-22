@@ -1,7 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
   $(".eaten").on("click", function (event) {
-    var id = $(this).data("id");
+    var id = $(this).attr("id");
 
     var devouredState = {
       devoured: true,
@@ -11,6 +11,7 @@ $(function () {
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: devouredState,
+
     }).then(function () {
       location.reload();
     });
