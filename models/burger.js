@@ -12,9 +12,9 @@ var burger = {
       cb(res);
     });
   },
-  updateOne: function (objColVals, condition, cb) {
+  updateOne: function (columnNames, values, cb) {
     // tablename, column name, boolean
-    orm.updateOne("burgers", objColVals, condition, function (res) {
+    orm.updateOne(columnNames, values, function (res) {
       cb(res);
     });
   },
