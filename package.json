@@ -19,7 +19,7 @@
   "homepage": "https://github.com/m1cha3lnava/gt-burger-joint#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.0.0",
+    "express-handlebars": "^5.3.1",
     "mysql": "^2.18.1",
     "sequelize": "^6.3.3"
   }
